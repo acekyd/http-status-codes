@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Register Page</title>
+</head>
+<body>
+	<h2>Please ignore the lack of styling</h2>
+	<form id = "form">
+		<input type="text" name="name" value="AceKyd">
+		<input type="email" name="email" value="ace@kyd.com">
+		<input type="password" name="password" value="acekyd">
+		<input type="submit" name="submit">
+	</form>
+	<script type="text/javascript">
+		let form = document.getElementById('form')
+		let data = {
+			name : form.elements.name.value,
+			email : form.elements.email.value,
+			password : form.elements.password.value
+		}
+		form.addEventListener('submit', (e) => {
+			e.preventDefault()
+			fetch('http://localhost:3000/bad-request', {
+			  	method: 'POST',
+			  	body: JSON.stringify(data), 
+			  	headers:{
+			    	'Content-Type': 'application/json'
+			  	}
+			}).then(res => {
+				console.log(res)
+				return res.json()
+			}).then(res => alert(res.message))
+			.catch(error => console.error('Error:', error))
+		})
+	</script>
+</body>
+</html>
