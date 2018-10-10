@@ -1,5 +1,5 @@
 # http-status-codes
-A simple project to show most common status codes and how they are implemented.
+A simple project to show most common status codes and how they are implemented. You can read about the article series on on Pusher's blog - [Part 1](https://pusher.com/tutorials/http-response-codes-part-1) and [Part 2](https://pusher.com/tutorials/http-response-codes-part-2).
 
 ## Setup
 
